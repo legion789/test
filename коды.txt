@@ -1,0 +1,69 @@
+string input = "[]"; // Введите строку для проверки
+int openBracketCount = 0;
+int closeBracketCount = 0;
+
+for (int i = 0; i < input.Length; i++)
+{
+    if (input[i] == '[')
+    {
+        openBracketCount++;
+    }
+    else if (input[i] == ']')
+    {
+        closeBracketCount++;
+    }
+}
+
+if (openBracketCount == closeBracketCount)
+{
+    Console.WriteLine("Количество открывающихся и закрывающихся квадратных скобок одинаково");
+}
+else
+{
+    Console.WriteLine("Количество открывающихся и закрывающихся квадратных скобок не одинаково");
+}
+
+
+
+
+string[] words = new string[14];
+
+Console.WriteLine("Введите 14 слов:");
+
+for (int i = 0; i < 14; i++)
+{
+    words[i] = Console.ReadLine();
+}
+
+Array.Sort(words, StringComparer.InvariantCultureIgnoreCase);
+
+Console.WriteLine("\nСлова в алфавитном порядке по первой букве:");
+foreach (string word in words)
+{
+    Console.WriteLine(word);
+}
+
+
+
+string input = "Введите строку для проверки"; // Введите строку для проверки
+Regex latinLetters = new Regex("[a-zA-Z]");
+
+if (latinLetters.IsMatch(input))
+{
+    Console.WriteLine("В строке есть хотя бы одна латинская буква");
+}
+else
+{
+    Console.WriteLine("В строке нет латинских букв");
+}
+
+
+
+
+
+Console.WriteLine("Введите строку:");
+string input = Console.ReadLine();
+
+string spacedString = string.Join(" ", input.ToCharArray());
+
+Console.WriteLine("Разрядная строка:" + spacedString);
